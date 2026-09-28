@@ -42,13 +42,17 @@ def get_circle(matrix, r, x, y):
     # print(f'matrix[{neighbor_x}][{neighbor_y}] =', matrix[neighbor_x][neighbor_y])
     # matrix[neighbor_x][neighbor_y] = 3
     cells = []
+    border = []
     for i in range(matrix_height):
         for j in range(matrix_width):
-            if (i - x) ** 2 + (j - y) ** 2 == r ** 2:
+            if (j - x) ** 2 + (i - y) ** 2 == r ** 2:
                 print(f'matrix[{i}][{j}] =', matrix[i][j])
                 matrix[i][j] = 7
+                border = [i, j]
+                cells.append(border)
+                print(cells)
 
 
-get_circle(art2, 5, 7, 12)
+get_circle(art2, 4, 12, 7)
 
 pprint(art2)
